@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="imagini/favicon.ico" rel="shortcut icon">
+<title>Contact - Intrebari,nelamuriri</title>
+<meta content="Dacă la un anumit pas întâmpini probleme și ai nevoie de ajutor ori ai orice alte întrebări sau sugestii, contactează-mă completând formularul de contact pe această pagină." name="description">
+<meta content="contact,sugestii,recomandari,dezvoltare,web,wordpress,bootstrap" name="keywords">
+<meta content="Alin Hucea" name="author">
+<meta content="index, follow" name="robots">
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+<link href="stil.css" media="screen and (min-width: 1024px)" rel="stylesheet" type="text/css">
+<link href="stil1024.css" media="screen and (min-width: 1024px)" rel="stylesheet" type="text/css">
+<link href="stil768.css" media="screen and (min-width: 768px) and (max-width: 1024px)" rel="stylesheet" type="text/css">
+<link href="stil480.css" media="screen and (min-width: 480px) and (max-width: 768px)" rel="stylesheet" type="text/css">
+<link href="stil320.css" media="screen and (min-width: 20px) and (max-width: 480px)" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="page">
+<div id="topnav">
+<ul class="menu-default">
+<li><a href="index.html">Bun venit!</a></li>
+<li><a href="ghid-wordpress.html">Ghid WordPress</a></li>
+<li><a href="tutorial-bootstrap.html">Tutorial Bootstrap</a></li>
+<li><a href="sugestii-recomandari.html">Sugestii/Recomandări</a></li>
+<li id="active"><a href="contact.html">Contact</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="main-inner">
+<div id="content">
+<div id="leftc">
+<h2 style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dacă la un anumit pas întâmpini probleme și ai nevoie de ajutor ori ai orice alte întrebări sau sugestii, contactează-mă completând formularul din partea dreaptă:</h2>
+<br>
+<br>
+<img alt="Send me a message - Contact me via Email Form" draggable="false" height="250" src="imagini/contact.png" style="margin-right:auto; margin-left:auto; display:block;" width="250"></div>
+<div id="rightc">
+<form action="contact.php" method="post">
+<div class="form-field" style="margin:5px 0px 5px 0px;"><label class="form-label">Numele tău:</label> <input class="form-input" type="text" name="name"></div>
+<div class="form-field" style="margin:5px 0px 5px 0px;"><label class="form-label">Adresa de email:</label> <input class="form-input" type="text" name="email"></div>
+<div class="form-field" style="margin:5px 0px 5px 0px;"><label class="form-label">Mesaj:</label> 
+<textarea class="form-input" name="message" style="height: 200px; width: 100%">
+</textarea></div>
+
+
+
+<div style="text-align:left; margin-top:10px; margin-bottom:10px;">
+<label><img draggable="false" src="captcha.php" style="margin-right: 10px; vertical-align: middle;
+"></label> 
+<input class="form-input" type="text" name="code" style="text-align:center; color:#000; width: 60px; margin-right: 10px;">
+
+<input class="btn" name="submit" type="submit" value="Trimite!">
+<input class="btn" name="reset" type="reset" value="Sterge!"><br />
+
+</div>
+</form>
+</div>
+<div style="clear: both;"></div>
+</div>
+</div>
+<footer>Informațiile de pe acest site pot fi distribuite fără acordul nostru cu condiția de a plasa un link activ către sursă.</footer>
+</div>
+</body>
+</html>

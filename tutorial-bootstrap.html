@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="imagini/favicon.ico" rel="shortcut icon">
+<title>Tutorial Bootstrap pentru cei care vor să dezvolte un website responsiv</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="Tutorialul cuprinde toate etapele importante pentru realizarea unui website responsiv pe fundația Twitter Bootstrap, atât pentru avansați cât și pentru cei cărora le place programarea si vor să își dezvolte abilitățile exersând." name="description">
+<meta content="bootstrap,responsiv,design,tutorial,css,html,javascript" name="keywords">
+<meta content="Alin Hucea" name="author">
+<meta content="index, follow" name="robots">
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+<link href="stil.css" media="screen and (min-width: 1024px)" rel="stylesheet" type="text/css">
+<link href="stil1024.css" media="screen and (min-width: 1024px)" rel="stylesheet" type="text/css">
+<link href="stil768.css" media="screen and (min-width: 768px) and (max-width: 1024px)" rel="stylesheet" type="text/css">
+<link href="stil480.css" media="screen and (min-width: 480px) and (max-width: 768px)" rel="stylesheet" type="text/css">
+<link href="stil320.css" media="screen and (min-width: 20px) and (max-width: 480px)" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="page">
+<div id="topnav">
+<ul class="menu-default">
+<li><a href="index.html">Bun venit!</a></li>
+<li><a href="ghid-wordpress.html">Ghid WordPress</a></li>
+<li id="active"><a href="tutorial-bootstrap.html">Tutorial Bootstrap</a></li>
+<li><a href="sugestii-recomandari.html">Sugestii/Recomandări</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="main-inner">
+<div id="content">
+<div id="leftg"><a href="http://getbootstrap.com/" target="_blank"><img alt="Create a responsiv websites for all devices using bootstrap" draggable="false" src="imagini/bootstrap.png" style="width:120;max-width:100%"></a></div>
+<div id="rightg">
+<h2 style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La realizarea unui site pe fundația Bootstrap, gradul de dificultate este mai mare decât pe platforma Wordpress deoarece la Bootstrap se lucrează doar cu liniile de cod.</h2>
+</div>
+<br>
+<ul class="tabs">
+<li class="labels2"><label for="tab1">1. Introducere</label> <label for="tab2">2. Noțiuni de bază</label> <label for="tab3">3. Mod de Construcție</label> <label for="tab4">4. Pagină demo</label> <label for="tab5">5. CSS personalizat</label> <label for="tab6">6. Alte componente</label>
+<div style="clear:both;"></div>
+</li>
+<li><input checked id="tab1" name="tabs" type="radio">
+<div class="tab-content" id="tab-content1">
+<h2 style="text-align:justify;">Introducere Bootstrap</h2>
+<div class="paragraph" style="text-align:justify;">În multe cazuri dezvoltatorii web au tot conținutul și structura gata, dar nu pot trece mai departe din cauza absenței design-ului. Ei trebuie astfel să se bazeze pe designeri pentru a finaliza partea vizuală a proiectului lor. Acest proces consumă o grămadă de bani și este o pierdere serioasă de timp pentru un dezvoltator care are nevoie ca ideile lui să fie puse în aplicare cât mai repede posibil. În aceste cazuri, într-un mod super-eroic, salvatorul este Twitter Bootstrap!<br>
+<br>
+Twitter Bootstrap este o fundație CSS care vă ajută la dezvoltarea aplicațiilor web responsiv. Acesta este unul dintre cele mai simple fundații CSS ale zilelor noastre din industria web. Este un proiect gratuit și 'Open Source', hostat pe GitHub, și original creat de (și pentru) rețeaua de socializare Twitter. Se presupune că nu ai cunoștințe de design și tot ce vrei să faci este scrii niște cod HTML. Pe scurt, Twitter Bootstrap are deja o foaie CSS pentru tine, jQuery inclus și are, de asemenea, unele instrumente populare JavaScript. Ai o grămadă de instrumente populare gata de utilizare. Tot ce trebuie sa faci este doar să plasezi codul HTML potrivit în locul potrivit.<br>
+<br>
+Un site web responsiv înseamnă un site care se adaptează automat la mărimea ecranului și a rezoluției dispozitivului de pe care este accesat (laptop, tabletă, smartphone etc.).<br>
+<br>
+In acest tutorial, îți explica cum poți începe să utilizezi Twitter Bootstrap prezentându-ți o pagină demo, și modul în care poți explora fundația și să o personalizezi după propriile preferințe.</div>
+</div>
+</li>
+<li><input id="tab2" name="tabs" type="radio">
+<div class="tab-content" id="tab-content2">
+<h2 style="text-align:justify;">Noțiuni de bază</h2>
+<div class="paragraph" style="text-align:justify;">Pentru a începe să utilizezi Twiiter Bootstrap, trebuie să descarci arhiva cu fișierele bootstrap de pe pagina lor oficială <a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a>. Aceasta este valabilă în două forme: versiunea precompilată și versiunea cod sursă.<br>
+<br>
+Versiunea 'Cod Sursă' vine scrisă în Less (sau Sass). toate JavaScript-urile și documentațiile necesare. Less și Sass două sunt pre-procesoare CSS, adică un fel de extensii care fac codul CSS mult mai dinamic, organizat și productiv. Astfel, designerii și dezvoltatorii ambițioși pot personaliza și construi propria lor versiune de Bootstrap. Dar dacă nu ești familiar cu Less (sau Sass) ori nu ești interesant în editarea codului sursă, poți pur și simplu să folosești versiunea precompilată vanilla CSS. Toate stilurile pot fi personalizate cu propriile coduri CSS.<br>
+<br>
+Noi ne vom concentra pe versiunea precompilată, care odată dezarhivată, arată cam așa:<br>
+<code>bootstrap/<br>
+├── css/<br>
+│&nbsp;&nbsp;&nbsp;├── bootstrap.css<br>
+│&nbsp;&nbsp;&nbsp;├── bootstrap.css.map<br>
+│&nbsp;&nbsp;&nbsp;├── bootstrap.min.css<br>
+│&nbsp;&nbsp;&nbsp;├── bootstrap-theme.css<br>
+│&nbsp;&nbsp;&nbsp;├── bootstrap-theme.css.map<br>
+│&nbsp;&nbsp;&nbsp;└── bootstrap-theme.min.css<br>
+├── js/<br>
+│&nbsp;&nbsp;&nbsp;├── bootstrap.js<br>
+│&nbsp;&nbsp;&nbsp;└── bootstrap.min.js<br>
+└── fonts/<br>
+&nbsp;&nbsp;&nbsp; ├── glyphicons-halflings-regular.eot<br>
+&nbsp;&nbsp;&nbsp; ├── glyphicons-halflings-regular.svg<br>
+&nbsp;&nbsp;&nbsp; ├── glyphicons-halflings-regular.ttf<br>
+&nbsp;&nbsp;&nbsp; ├── glyphicons-halflings-regular.woff<br>
+&nbsp;&nbsp;&nbsp; └── glyphicons-halflings-regular.woff2</code><br>
+<br>
+Structura Bootstrap este destul de simplă și auto-explicativă. Aceasta include fișiere precompilate care pot fi utilizate rapid în orice proiect web. În afară de CSS compilat și minified (micșorat) și fișierele JavaScript, include, de asemenea, fonturi de la Glyphicons, și tema opțională de început Bootstrap.<br>
+<br>
+Această structură poate fi încorporată foarte ușor în structura de fișiere a proiectului tău doar adăugând fișierele Bootstrap exact cum sunt în arhiva originală, sau dacă nu se potrivesc bine cu proiectul tău, poți re-aranja fișierele și să le pui oriunde vrei. Doar asigură-te că folderul 'fonts' este în același director cu folderul css.<br>
+<br>
+Hai să ne murdărim puțin mâinile! Deschide-ti editorul de text (eu personal prefer și recomand <a href="https://notepad-plus-plus.org/" style="font-weight: bold" target="_blank">Notepad++</a>) și crează primul fișier numit "index.html" în folderul principal al proiectului.<br>
+<br>
+<img alt="Folder cu fisierele Bootstrap: CSS, JAVASCRIPT, IMG, INDEX" draggable="false" src="pasib/1.png"><br>
+<br>
+<b>Structura HTML de bază:</b><br>
+<code>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&lt;meta charset="utf-8"&gt;<br>
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;<br>
+&lt;title&gt;Bootstrap Website &lt;/title&gt;<br>
+&lt;link href="css/bootstrap.min.css" rel="stylesheet"&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+<br>
+&lt;h1&gt;Hello, world! &lt;/h1&gt;<br>
+<br>
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;<br>
+&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</code><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Este important să începem orice pagină HTML cu declarând tipul documentului: <code>&lt;!DOCTYPE html&gt;</code>, astfel browserul înțelege ce fel de document va deschide. Secțiunea HEAD conține trei tag-uri <code>&lt;meta&gt;</code> importante care trebuie declarate înainte, iar orice alte tag-uri trebuie adăugate după acestea. Fișierele JavaScript adăugate la sfârșitul paginii îi vor permite acesteia să se încarce vizibil înainte ca vreun JavaScript să fie executat. jQuery este necesar pentru extensiile Bootstrap, și trebuie încărcat înainte de <code>bootstrap.js</code>. Dacă nu vrei să folosești nici una din facilitățile interactive Bootstrap, atunci poți omite aceste fișiere din sursă.<br>
+<br>
+Până aici, fișierul tău index.html ar trebui să arate cam așa:<br>
+<img alt="Cod de bază standard HTML pentru a începe un website, Notepad++" draggable="false" src="pasib/2.png"><br>
+<br>
+Acesta este minimul necesar pentru a construi un site pe fundația Bootstrap. Probabil vrei să arunci un ochi la exemplele mai avansate de pe pagina <a href="http://getbootstrap.com/getting-started/#examples" target="_blank">Bootstrap's examples</a>. De asemenea, poți găsi teme complete și gratuite pe diferite website-uri precum <a href="https://bootswatch.com/" target="blank">https://bootswatch.com/</a> (poți găsi mai multe la pagina <a href="sugestii/recomandari.html" target="_blank">Sugestii/Recomandări</a>).<br>
+<br></div>
+</div>
+</li>
+<li><input id="tab3" name="tabs" type="radio">
+<div class="tab-content" id="tab-content3">
+<h2 style="text-align:justify;">Mod de construcție</h2>
+<div class="paragraph" style="text-align:justify;">Site-urile construite pe Bootstrap au un design responsiv, adică același cod sursă va adapta automat design-ul pentru mărimea ecranului de pe care este accesat site-ul (tablete, telefoane etc). Design-ul se realizează cu ajutorul unui sistem de coloane, fiind posibilă afișarea a maxim 12 coloane egale (grids) în funcție de mărimea dispozitivului. Aceste coloanele constituie structura principală a aspectului, care definește orientările orizontale și verticale pentru aranjarea conținutului și aplicarea marginilor.<br>
+<br>
+Coloanele sunt poziționate în interiorul unor rânduri -&gt; div-uri cu clasa <code>row</code>, care crează grupuri orizontale de coloane. Poți folosi câte astfel de rânduri vrei, dar coloanele trebuie să fie neapărat incluse în aceste rânduri. Pe un rând, lățimea fiecărei coloană poate fi modificată în funcție de cele 12 coloane, dar nu e obligatoriu să folosești toate cele 12 coloane.<br>
+<br>
+Sistemul Bootstrap are 4 niveluri de clase <code>xs</code> pentru telefoane (&lt;768px), <code>sm</code> pentru tablete (≥768px), <code>md</code> pentru desktop-uri (≥992px), și <code>lg</code> pentru desktop-uri mai mari (≥1200px). Acestea definesc practic dimensiunile la care coloanele se vor poziționa orizontal. Clasele pot fi folosite în orice combinație pentru a obține structuri flexibile.<br>
+<br>
+De exemplu ca să adăugăm 2 rânduri, primul cu două coloane, iar al doilea rând cu 4 coloane, scriem așa:<br>
+<code>&lt;div class="row"&gt;<br>
+&lt;div class="col-md-6"&gt;First column&lt;/div&gt;<br>
+&lt;div class="col-md-6"&gt;Second column&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;div class="row"&gt;<br>
+&lt;div class="col-md-3"&gt;First column&lt;/div&gt;<br>
+&lt;div class="col-md-3"&gt;Second column&lt;/div&gt;<br>
+&lt;div class="col-md-3"&gt;Third column&lt;/div&gt;<br>
+&lt;div class="col-md-3"&gt;Fourth column&lt;/div&gt;<br>
+&lt;/div&gt;</code><br>
+<br>
+Putem folosi lățimi mixte ale coloanelor:<br>
+<code>&lt;div class="row"&gt;<br>
+&lt;div class="col-md-9"&gt;Wider column&lt;/div&gt;<br>
+&lt;div class="col-md-3"&gt;Smaller column&lt;/div&gt;<br>
+&lt;/div&gt;</code><br>
+<br>
+Putem schimba aspectul compensând cu niște coloane goale utilizând clasa <code>offset</code>, de exemplu pentru a crea un conținut mai îngust și centrat:<br>
+<code>&lt;div class="row"&gt;<br>
+&lt;div class="col-md-6 col-md-offset-3"&gt;Centered column&lt;<br>
+/div&gt; &lt;/div&gt;</code><br>
+<br>
+Putem seta coloanele cu lățime fixă sau full (pe tot ecranul) utilizând clasa <code>.container</code> respectiv <code>.container-fluid</code>:<br>
+<code>&lt;div class="container"&gt;<br>
+&lt;div class="row"&gt;<br>
+&lt;div class="col-md-8"&gt;<br>
+Parent fixed-width column<br>
+&lt;div class="row"&gt;<br>
+&lt;div class="col-md-6"&gt;Nested column&lt;/div&gt;<br>
+&lt;div class="col-md-6"&gt;Nested column&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;div class="container-fluid"&gt;<br>
+<br>
+&lt;div class="row"&gt;<br>
+&lt;div class="col-md-4"&gt;Fluid ..&lt;/div&gt;<br>
+&lt;div class="col-md-4"&gt;.. and full-width ..&lt;/div&gt;<br>
+&lt;div class="col-md-4"&gt;.. example&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;/div&gt;</code><br>
+<br>
+Dacă combinăm niveluri de clase diferite, obținem un design diferit pe mobil și desktop. În exemplul de mai jos, pe desktop vor fi 4 coloane pe o linie, dar pe mobil ele vor avea lățime full (pe tot ecranul) și vor fi poziționate una peste cealaltă:<br>
+<code>&lt;div class="row"&gt;<br>
+&lt;div class="col-xs-12 col-md-3"&gt;.col-xs-12 .col-md-3&lt;/div&gt;<br>
+&lt;div class="col-xs-12 col-md-3"&gt;.col-xs-12 .col-md-3&lt;/div&gt;<br>
+&lt;div class="col-xs-12 col-md-3"&gt;.col-xs-12 .col-md-3&lt;/div&gt;<br>
+&lt;div class="col-xs-12 col-md-3"&gt;.col-xs-12 .col-md-3&lt;/div&gt;<br>
+&lt;/div&gt;</code></div>
+</div>
+</li>
+<li><input id="tab4" name="tabs" type="radio">
+<div class="tab-content" id="tab-content4">
+<h2 style="text-align:justify;">Înainte de a construi un website este mai bine să realizăm o schiță simplă a acestuia (pe hârtie sau chiar în paint):</h2>
+<div class="paragraph" style="text-align:justify;">
+<ol>
+<li>1. Meniu (Menu)</li>
+<li>2. Zonă de Marketing (Header)</li>
+<li>3. Conținut (Content)</li>
+<li>4. Subsol (Footer)</li>
+</ol>
+<br>
+<img alt="Structura unui website basic - realizată în paint" draggable="false" src="pasib/schita.png"><br>
+<br>
+Acum, trebuie să reții că pentru orice componentă care vrei să o adaugi pe pagină, îi vei găsi instrucțiunile în <a href="http://getbootstrap.com/getting-started/" target="_blank">documentația oficială Bootstrap</a>. Înainte de a crea aceste secțiuni pe pagină, vom adăuga clasa container care va va centra conținutul pe mijlocul ecranului, div-ul container îl vom închide doar la sfârșitul paginii. Acest div reprezintă structura principală a paginii. Acum du-te si scrie următorul div chiar sub <code>&lt;body&gt;</code> și închide-l cu <code>&lt;/div&gt;</code> înainte de script-urile JavaScript de la sfârșitul paginii:<br>
+<br>
+<code>&lt;div class="container"&gt;</code><br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;1. Zona Meniului</b><br>
+E timpul să adăugăm titlul site-ului (ca un fel de logo) și meniul, luat din documentația Bootstrap care te ajută foarte mult până când o să reții clasele componentelor.<br>
+<code>&lt;nav class="navbar navbar-inverse navbar-fixed-top"&gt;<br>
+&lt;div class="navbar-header"&gt;<br>
+&lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"&gt;<br>
+&lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;<br>
+&lt;span class="icon-bar"&gt;&lt;/span&gt;<br>
+&lt;span class="icon-bar"&gt;&lt;/span&gt;<br>
+&lt;span class="icon-bar"&gt;&lt;/span&gt;<br>
+&lt;/button&gt;<br>
+&lt;a class="navbar-brand" href="#"&gt;Primul meu site Bootstrap&lt;/a&gt;<br>
+&lt;/div&gt;<br>
+&lt;div id="navbar" class="collapse navbar-collapse"&gt;<br>
+&lt;ul class="nav navbar-nav"&gt;<br>
+&lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;/nav&gt;</code><br>
+<br>
+Vom folosi tag-ul <code>&lt;nav&gt;</code> pentru zona meniulului. Clasa <code>navbar-inverse</code> reprezintă învelișul meniului (background-ul negru), pentru background gri poți folosi clasa <code>navbar-default</code>, clasa <code>navbar-fixed-top</code> face ca bara meniului să rămână fixă și vizibilă în partea de sus chiar dacă derulăm pagina mai jos, dacă nu vrei ca meniul să fie mereu vizibil atunci poți elimina această clasă. Clasa <code>navbar-header</code> e folosită pentru prezentarea brandului (printr-un logo sau text). Butoanele cu clasele <code>navbar-toggle collapsed</code> reprezintă meniul pe o rezoluție mai mică, ca de smartphone, și îl face compatibil cu touchscreen-ul acestuia. Clasa <code>navbar-brand</code> afișează numele site-ului. Pentru listarea meniului am folosit elementele HTML standard pe care probabil le știi deja: <code>ul</code> și <code>li</code>.<br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;2. Zona de Marketing</b><br>
+Există o frumoasă clasă predefinită foarte ușor de utilizat inclusă în Bootstrap pentru zona de marketing care poate fi folosită pentru a afișa banere și anumite descrieri: <code>jumbotron</code>. Acest lucru este folosit mai ales pe site-uri web care vând anumite produse.<br>
+<code>&lt;div class="jumbotron"&gt;<br>
+&lt;h1&gt;Salut!&lt;/h1&gt;<br>
+&lt;p&gt;Aceasta este descrierea produsului sau a site-ului. Poți scrie ce vrei tu!&lt;/p&gt;<br>
+&lt;p&gt;<br>
+&lt;a class="btn btn-lg btn-primary btn-danger" href="#" role="button"&gt;Află mai multe&lt;/a&gt;<br>
+&lt;/p&gt;<br>
+&lt;/div&gt;</code><br>
+<br>
+Poți face orice legătură să arate ca un buton prin adăugarea clasei <code>btn</code> și apoi modifici dimensiunea prin adăugarea unor clase suplimentare pe care le găsești în documentația Bootstrap. Pentru a schimba culorile butoanelor, se adaugă clase precum btn-success (verde), btn-info (albastru deschis), btn-warning (portocaliu) and btn-danger (roșu). Verifică-ți pagina în browser, până aici ar trebui să arate ca și cea de mai jos:<br>
+<img alt="Zona de marketing" draggable="false" src="pasib/3.png"><br>
+<br>
+Este uimitor că până aici, fară să scriem o linie de CSS am reușit să facem o frumoasă "Zona de Marketing".<br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;3. Conținutul</b><br>
+După cum am scris secțiunea "Mod de construcție", Design-ul Bootstrap este construit pe 12 coloane egale. Orice element de pe pagină ocupă cel puțin o coloană. Lățimea acestuia este constuită în funcție de câte coloane ocupă. Eu am să adaug un rând cu 3 coloane egale:<br>
+<code>&lt;div class="row"&gt;<br>
+&lt;div class="col-md-4"&gt;<br>
+&lt;h3 class="text-center"&gt;Primul pachet: Standard!&lt;/h3&gt;<br>
+&lt;p&lt;<br>
+Spațiu: 3 GB&lt;br&gt;<br>
+Domenii: 3&lt;br&gt;<br>
+Baze de date: 3&lt;br&gt;<br>
+Adrese de e-mail: 3&lt;br&gt;<br>
+&lt;/p&gt;<br>
+&lt;a href="#" class="btn btn-success"&gt;Cumpără acum @ 15 RON&lt;/a&gt;<br>
+&lt;/div&gt;<br>
+&lt;div class="col-md-4"&gt;<br>
+&lt;h3 class="text-center"&gt;Al doilea pachet: Silver!&lt;/h3&gt;<br>
+&lt;p&gt;<br>
+Spațiu: 5 GB&lt;br&gt;<br>
+Domenii: 5&lt;br&gt;<br>
+Baze de date: 5&lt;br&gt;<br>
+Adrese de e-mail: 5&lt;br&gt;<br>
+&lt;/p&gt;<br>
+&lt;a href="#" class="btn btn-danger"&gt;Cumpără acum @ 25 RON&lt;/a&gt;<br>
+&lt;/div&gt;<br>
+&lt;div class="col-md-4"&gt;<br>
+&lt;h3 class="text-center"&gt;Al treilea pachet: Gold!&lt;/h3&gt;<br>
+&lt;p&gt;<br>
+Spațiu: 10 GB&lt;br&gt;<br>
+Domenii: 10&lt;br&gt;<br>
+Baze de date: 10&lt;br&gt;<br>
+Adrese de e-mail: 10&lt;br&gt;<br>
+&lt;/p&gt;<br>
+&lt;a href="#" class="btn btn-info"&gt;Cumpără acum @ 50 RON&lt;/a&gt;<br>
+&lt;/div&gt;<br>
+&lt;/div&gt;</code><br>
+<br>
+Clasa <code>row</code> crează un rând nou, iar clasa <code>col-md-4</code> folosită de 3 ori, crează 3 părți egale de câte 4 coloane (12/4=3). În continuare putem adăuga câte rânduri vrem, care pot avea câte coloane vrem. Hai să mai adăugăm încă un rând cu 2 coloane inegale:<br>
+<code>&lt;br&gt;&lt;hr&gt;<br>
+&lt;div class="row"&gt;<br>
+&lt;div class="col-md-4"&gt;<br>
+...Partea stânga...<br>
+&lt;/div&gt;<br>
+&lt;div class="col-md-8"&gt;<br>
+...Partea dreaptă...<br>
+&lt;/div&gt;<br>
+&lt;/div&gt; &lt;hr&gt;<br></code><br>
+<br>
+Tag-ul <code>br</code> reprezintă un rând liber pentru a avea mai mult spațiu între cele 2 rânduri, iar tag-ul <code>hr</code> afișează o bara orizontală pentru a delimita mai bine cele două rânduri. Acum în locul textului "...Partea stângă..." vom adăuga următorul cod, pentru a crea un alt meniu secundar:<br>
+<code>&lt;ul class="nav nav-list"&gt;<br>
+&lt;li class="nav-header"&gt;Partenerii noștrii&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Google&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Yahoo!&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Bing&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Microsoft&lt;/a&gt;&lt;/li&gt;<br>
+&lt;/ul&gt;</code><br>
+<br>
+Trebuie să adaugi clasa 'nav-list' în plus față de clasa 'nav', care va face meniul sa arate ca o listă. Acum să trecem la partea din dreapta, înlocuiește textul "...Partea dreaptă..." cu următorul cod:<br>
+<code>&lt;h3&gt;Cine suntem noi?&lt;/h3&gt;<br>
+&lt;p&gt;Noi suntem o echipa specializată care ne vom ocupa de ceea ce ai nevoie. TextText TextText TextText TextText TextText TextText TextText TextText TextText TextText TextText TextText TextText TextText TextText TextText.060;/p&gt;<br>
+&lt;h3&gt;Ce experiență avem?&lt;/h3&gt;<br>
+&lt;p&gt;Avem o experiență de peste 10 ani.&lt;/p&gt;<br></code><br>
+<br>
+Verifică-ți pagina în browser, ar trebui să arate mult mai "vie" acum. După cum poți vedea, suntem foarte aproape de a termina design-ul final. Mai avem doar puțin cu ultima porțiune din site, și anume subsolul. În acest moment pagina ar trebui să arate cam așa:<br>
+<img alt="Design-ul aproape terminat - Structura Meniu, Zona marketing, Continut finalizate (Menu, Header, Content)" draggable="false" src="pasib/4.png"><br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;4. Subsol (Footer)</b><br>
+Pentru porțiunea FOOTER, vom împărți din nou un rând în 2 părți și vom adăuga din nou un meniu mic:<br>
+<code>&lt;footer class="footer"&gt; &lt;div class="col-md-5"&gt;<br>
+&lt;ul class="nav nav-pills"&gt;<br>
+&lt;li class="active"&gt;&lt;a href="#"&gt;Pagina principală&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Termeni și condiții&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Alte informații&lt;/a&gt;&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+&lt;/div&gt;<br>
+&lt;div class="col-md-7"&gt;<br>
+&lt;h3 class="muted text-center"&gt; Servicii de calitate!&lt;/h3&gt;<br>
+&lt;/div&gt;<br>
+&lt;/footer&gt;</code><br>
+<br>
+Destul de simplu! Am împărțit folosit tag-ul html <code>footer</code> ca un rând și l-am împărțit în 2 coloane inegale. Pe coloana din stânga am adăugat un mic meniu de navigare, iar clasa <code>nav-pills</code> reprezintă aspectul și poziționarea în linie a acestuia, iar în dreapta am adăugat un mic text.<br>
+<br>
+Așadar, am construit o pagină responsiv simplă dar decentă conform ultimelor standarde web, folosind fundația Twitter Bootstrap. Nu a durat foarte mult timp, gândește-te ce ai putea face adăugându-ți propriile stiluri CSS și alocând mai mult timp proiectelor.<br>
+<br>
+Pagina noastră poate fi accesată la urmățorul link: <a href="www.cumsafaciunsiteweb.com/demo-bootstrap/index.html" style="font-weight: bold">www.cumsafaciunsiteweb.com/demo-bootstrap/index.html</a> și te poate ajuta în cazul în care ai anumite probleme și dorești să vezi codul sursă al acesteia (pentru a accesa codul sursă fă click dreapta într-un spațiu liber pe pagină și apasă pe "View Page Source" sau "Afișează Sursa Paginii"). Aici avem și o imagine cu pagina terminată:<br>
+<img alt="WebSite responsiv complet terminat - Structura Meniu, Zona marketing, Continut finalizate (Menu, Header, Content)" draggable="false" src="pasib/5.png"><br>
+<br></div>
+</div>
+</li>
+<li><input id="tab5" name="tabs" type="radio">
+<div class="tab-content" id="tab-content5">
+<h2 style="text-align:justify;">5. Adăugarea stilurilor CSS Personalizate</h2>
+<div class="paragraph" style="text-align:justify;">Dacă ai niște cunoștințe de CSS și dorești să personalizezi stilurile implicite Bootstrap, atunci cea mai bună cale este să-ți construiești propria foaie de stil CSS personalizat, incluzi stilul Bootstrap la început și apoi înlocuiești stilurile în propria ta foaie CSS. Asigură-te să adaugi foaia ta CSS în fișierul HTML și nu foaia Bootstrap.css. Dacă ești mulțumit de stilul implicit Bootstrap atunci, evident, nu ai de ce să creezi o foaie personalizată.<br>
+<br>
+Totuși, pe cât de multe site-uri vor folosi această fundație, stilul CSS va deveni comun și poate fi văzut pe toate celelalte site-uri construite cu Bootstrap (dacă nici acolo nu s-au adăugat deloc stiluri CSS personalizate). Deci, este mai bine dacă măcar puțin îți adaugi propria "aromă" de CSS, ca să-i oferi site-ului un aer de originalitate.<br>
+<br>
+Ca să incluzi stilul Bootstrap în propria ta foaie CSS, după cum am spus mai sus, adaugi următorul cod la începutul foii tale CSS:<br>
+<br>
+<code>@import url("bootstrap.min.css");</code></div>
+</div>
+</li>
+<li><input id="tab6" name="tabs" type="radio">
+<div class="tab-content" id="tab-content6">
+<h2 style="text-align:justify;">6. Alte componente Bootstrap importante</h2>
+<div class="paragraph" style="text-align:justify;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centrare paragraf</b><br>
+Pentru a face un paragraf să stea în mijlocul unui document lung, poți adăuga clasa <code>LEAD</code>. De asemenea, va face fonturile paragrafului alineat special un pic mai mari decât restul fonturilor din document.<br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tag-uri scriere</b><br>
+De asemenea, poți utiliza tag-urile de scriere precum <code>&lt;small&gt;</code>, <code>&lt;strong&gt;</code> și <code>&lt;em&gt;</code> în interiorul paginii HTML. Și tag-urile precum <code>&lt;b&gt;</code> și <code>&lt;i&gt;</code> sunt valide.<br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alinierea textului</b><br>
+Alinierea textului în interiorul oricărui paragraf sau div poate fi făcută folosind clasele: <code>text-left</code>, <code>text-center</code> și <code>text-right</code>.<br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Culori texte</b><br>
+Poți seta culorile standard pentru paragrafe folosind diverse clase precum <code>muted</code> (gri), <code>text-warning</code> (roșu), <code>text-error</code> (maro profund), <code>text-info</code> (albastru deschis) și <code>text-success</code> (verde).<br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stil tabele</b><br>
+Twitter Bootstrap are inclus design-ul pentru tabele. Folosește codurile de mai jos:<br>
+<br>
+<code>&lt;table class="table"&gt;<br>
+&lt;tr&gt;<br>
+&lt;td&gt;...&lt;/td&gt;<br>
+&lt;td&gt;...&lt;/td&gt;<br>
+&lt;/tr&gt;<br>
+......<br>
+&lt;/table&gt;</code><br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Imaginile</b><br>
+Poți adăuga imagini folosind codul html normal: <code>&lt;img src="imagine.jpg" /&gt;</code>. Pentru a îți face design-ul puțin mai interesant, adaugă clase precum <code>img-rounded</code> pentru colțuri rotunde, <code>img-circle</code> pentru a afișa imaginea rotundă și <code>img-polaroid</code> pentru a aduce umbre și rotunjiri colțurilor imaginii.<br>
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Meniuri 'Drop Down'</b><br>
+Pentru a adăuga un meniu 'drop down' (adică mai multe opțiuni la un element din meniu) la bara de navigare, folosește-te de următorul model:<br>
+<br>
+<code>&lt;li class="dropdown"&gt;<br>
+&lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;<br>
+&lt;i class="icon-th-large"&gt;&lt;/i&gt; Drop Down<br>
+&lt;b class="caret"&gt;&lt;/b&gt;<br>
+&lt;/a&gt;<br>
+&lt;ul class="dropdown-menu"&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Item1&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Item2&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href="#"&gt;Item3&lt;/a&gt;&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+&lt;/li&gt;<br></code><br>
+<br>
+Așadar, în acest tutorial ți-am arătat elementele de bază pentru a utiliza fundația Bootstrap și cum poți începe cu aceasta. Acum că, ai înțeles cum funcționează, ar trebui să îți fie mult mai ușor să înțelegi documentațiile originale Bootstrap. Le poți găsi <a href="http://getbootstrap.com/components/" target="_blank">http://getbootstrap.com/components/</a> - cu siguranță vei găsi o mulțime de caracteristici noi pentru realizarea unui website profesional.</div>
+</div>
+</li>
+<li></li>
+</ul>
+<div style="clear:both"></div>
+<br>
+<p>Surse cu anumite informații explicative despre Bootstrap: <a href="http://www.sitepoint.com/" target="_blank">https://www.sitepoint.com</a>, <a href="http://www.w3schools.com/" target="_blank">http://www.w3schools.com</a>.</p>
+</div>
+</div>
+<footer>Informațiile de pe acest site pot fi distribuite fără acordul nostru cu condiția de a plasa un link activ către sursă.</footer>
+</div>
+</body>
+</html>
